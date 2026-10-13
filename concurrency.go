@@ -26,6 +26,7 @@ func hello() {
 //		//buffer满了还发送 就block
 //		//buffer空了还接收 也block
 //
+//如果有了buffer 像是Q1d 因为buffer装得下三个东西 就可以一次性的全部都发出去 而收的话 还是得等三秒
 //}
 
 // 只发送channel
