@@ -29,10 +29,10 @@ func main() {
 	go sendMessages(messages)
 
 	// Receive the 3 messages sent by the goroutine.
-	for i := 0; i < 3; i++ {
+	for i := 0; i < 4; i++ {
 		// Wait 1s between each receive.
 		time.Sleep(1 * time.Second)
-		if i == 2 {
+		if i == 3 {
 			break
 		} else {
 			receivedMessage := <-messages
