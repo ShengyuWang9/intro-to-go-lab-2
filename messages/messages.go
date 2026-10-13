@@ -17,7 +17,7 @@ func sendMessages(receiver chan string) {
 	for _, m := range messages {
 		fmt.Println("sendMessages is sending:", m)
 		receiver <- m
-		
+
 	}
 }
 
@@ -32,7 +32,11 @@ func main() {
 	for i := 0; i < 3; i++ {
 		// Wait 1s between each receive.
 		time.Sleep(1 * time.Second)
-		receivedMessage := <-messages
-		fmt.Println("Main has received:", receivedMessage)
+		if i == 2 {
+			break
+		} else {
+			receivedMessage := <-messages
+			fmt.Println("Main has received:", receivedMessage)
+		}
 	}
 }
